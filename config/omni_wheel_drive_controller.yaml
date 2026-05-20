@@ -1,0 +1,99 @@
+# ==========================================================
+# 1. Cấu hình Controller Manager (Bắt buộc trong ROS 2)
+# ==========================================================
+controller_manager:
+  ros__parameters:
+    update_rate: 50 
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    # Khai báo Node điều khiển bánh Omni của bạn
+    omni_wheel_drive_controller:
+      type: omni_wheel_drive_controller/OmniWheelDriveController
+# ==========================================================
+# 2. Cấu hình cho Joint State Broadcaster
+# ==========================================================
+joint_state_broadcaster:
+  ros__parameters:
+    publish_rate: 50
+    extra_joints:
+      - roller_e_rim_left_joint
+      - roller_ne_rim_left_joint
+      - roller_n_rim_left_joint
+      - roller_nw_rim_left_joint
+      - roller_w_rim_left_joint
+      - roller_sw_rim_left_joint
+      - roller_s_rim_left_joint
+      - roller_se_rim_left_joint
+      - roller_e_rim_right_joint
+      - roller_ne_rim_right_joint
+      - roller_n_rim_right_joint
+      - roller_nw_rim_right_joint
+      - roller_w_rim_right_joint
+      - roller_sw_rim_right_joint
+      - roller_s_rim_right_joint
+      - roller_se_rim_right_joint
+      - roller_e_rim_back_joint
+      - roller_ne_rim_back_joint
+      - roller_n_rim_back_joint
+      - roller_nw_rim_back_joint
+      - roller_w_rim_back_joint
+      - roller_sw_rim_back_joint
+      - roller_s_rim_back_joint
+      - roller_se_rim_back_joint
+  
+# ==========================================================
+# 3. Cấu hình tham số riêng của Omni Controller (File cũ của bạn)
+# ==========================================================
+omni_wheel_drive_controller:
+  ros__parameters:
+    # NOTE: Tune these to match your wheel geometry (order matters).
+    wheel_offset: 0.0
+
+    # Your URDF joint names:
+    wheel_names:
+      - "rim_left_joint"
+      - "rim_right_joint"
+      - "rim_back_joint"
+
+    # Distance from robot center to each wheel center (meters). TUNE if odom behavior is wrong.
+    robot_radius: 0.08
+
+    # Wheel radius (meters). TUNE based on your real rim/roller radius.
+    wheel_radius: 0.035
+    
+    use_stamped_vel: false
+    
+    # TF/frames
+    odom_frame_id: "odom"
+    base_frame_id: "base_footprint"
+
+    # Odometry/feedback modes
+    open_loop: true
+    position_feedback: false
+    enable_odom_tf: true
+
+    # Robot should stop if cmd_vel is stale
+    cmd_vel_timeout: 0.5
+
+    # Optional
+    publish_limited_velocity: true
+    pose_covariance_diagonal: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    twist_covariance_diagonal: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+
+# Cấp lực PID cho các khớp nối trong Gazebo
+gazebo_ros2_control:
+  ros__parameters:
+    gains:
+      rim_left_joint:
+        p: 500.0
+        i: 10.0
+        d: 0.0
+      rim_right_joint:
+        p: 500.0
+        i: 10.0
+        d: 0.0
+      rim_back_joint:
+        p: 500.0
+        i: 10.0
+        d: 0.0

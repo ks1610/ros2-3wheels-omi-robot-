@@ -1,0 +1,626 @@
+<?xml version="1.0"?>
+<robot
+	xmlns:xacro="http://www.ros.org/wiki/xacro"
+	name="diff">
+
+	<xacro:include filename="$(find diff)/urdf/roller.urdf.xacro"/>
+
+	<link name="base_footprint"/> 
+	<link name="base_link">
+
+	<inertial>
+		<mass value="0.07862944645"/>
+		<inertia  
+			ixx="0.00002035985530754"
+			ixy="0"
+			ixz="0"
+			iyy="0.00002035985530754"
+			iyz="0"
+			izz="0.00003945961663220"
+		/>
+	</inertial>
+
+	<visual>
+		<geometry>
+			<mesh filename="package://diff/mesh/base_cift.stl" scale="0.0007 0.0007 0.0007"/>
+		</geometry>
+		<material name="base_material">
+			<color rgba="0 0 0 1"/>
+		</material>
+	</visual>
+
+	<collision>
+		<geometry>
+			<mesh filename="package://diff/mesh/base_cift.stl" scale="0.0007 0.0007 0.0007"/>
+		</geometry>
+	</collision>
+
+	</link>
+	<joint name="base_joint" type="fixed">
+		<parent link="base_footprint" />
+		<child link="base_link" />
+		<origin xyz="0 0 0"/>
+	</joint>
+
+	<link name="rim_left_link">
+
+		<inertial>
+
+			<origin xyz="0 0 -0.000343"/>
+			<mass value="0.00835758"/>
+			<inertia
+				ixx="6.63684e-07"
+				ixy="0"
+				ixz="0"
+				iyy="6.63684e-07"
+				iyz="0"
+				izz="9.40333e-07"
+			/>
+
+		</inertial>
+		<visual>
+
+			<geometry>
+				<mesh filename="package://diff/mesh/rim.stl"/>
+			</geometry>
+			<material name="rim_left_material">
+				<color rgba="0 0 1 1"/>
+			</material>
+
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://diff/mesh/rim.stl"/>
+			</geometry>
+		</collision>
+
+	</link>
+	<joint
+		name="rim_left_joint"
+		type="continuous"
+	>
+
+		<parent link="base_link" />
+		<child link="rim_left_link" />
+		<axis xyz="0 0 1"/>
+		<origin
+			xyz="+0.067 -0.0337 0.0165"
+			rpy="0 1.57079 -0.523598776"
+		/>
+
+	</joint>
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+	<link name="rim_right_link">
+
+		<inertial>
+
+			<origin xyz="0 0 -0.000343"/>
+			<mass value="0.00835758"/>
+			<inertia
+				ixx="6.63684e-07"
+				ixy="0"
+				ixz="0"
+				iyy="6.63684e-07"
+				iyz="0"
+				izz="9.40333e-07"
+			/>
+
+		</inertial>
+		<visual>
+
+			<geometry>
+				<mesh filename="package://diff/mesh/rim.stl"/>
+			</geometry>
+			<material name="rim_right_material">
+				<color rgba="0 1 0 1"/>
+		
+			</material>
+
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://diff/mesh/rim.stl"/>
+			</geometry>
+		</collision>
+
+	</link>
+
+	<joint
+		name="rim_right_joint"
+		type="continuous"
+	>
+
+		<parent link="base_link" />
+		<child link="rim_right_link" />
+		<axis xyz="0 0 -1"/>
+		<origin
+			xyz="-0.067 -0.0337 0.0165"
+			rpy="0 1.57079 0.523598776"
+		/>
+
+	</joint>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+	<link name="rim_back_link">
+
+		<inertial>
+
+			<origin xyz="0 0 -0.000343"/>
+			<mass value="0.00835758"/>
+			<inertia
+				ixx="6.63684e-07"
+				ixy="0"
+				ixz="0"
+				iyy="6.63684e-07"
+				iyz="0"
+				izz="9.40333e-07"
+			/>
+
+		</inertial>
+		<visual>
+
+			<geometry>
+				<mesh filename="package://diff/mesh/rim.stl" />
+			</geometry>
+			<material name="rim_back_material">
+				<color rgba="1 0 0 1"/>
+			</material>
+
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://diff/mesh/rim.stl" />
+			</geometry>
+		</collision>
+
+	</link>
+
+	<joint
+		name="rim_back_joint"
+		type="continuous"
+	>
+
+		<parent link="base_link" />
+		<child link="rim_back_link" />
+		<axis xyz="0 0 -1"/>
+		<origin
+			xyz="0 0.082 0.0165"
+			rpy="-1.570796326794896 0 3.141592653589793"
+		/>
+
+	</joint>
+
+<!-- ************************************************************************************************************* -->
+	<xacro:roller_macro
+		parent="left"
+		name="e"
+		xyz="0.01355 0 0.0055"
+		rpy="-1.570796326794896 0 0"
+	/>
+	<xacro:roller_macro
+		parent="left"
+		name="ne"
+		xyz="0.00958129689 0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 0.7853981633974483"
+	/>
+	<xacro:roller_macro
+		parent="left"
+		name="n"
+		xyz="0 0.01355 0.0055"
+		rpy="-1.570796326794896 0 1.570796326794896"
+	/>
+	<xacro:roller_macro
+		parent="left"
+		name="nw"
+		xyz="-0.00958129689 0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 2.356194490192345"
+	/>
+	<xacro:roller_macro
+		parent="left"
+		name="w"
+		xyz="-0.01355 0 0.0055"
+		rpy="-1.570796326794896 0 3.141592653589793"
+	/>
+	<xacro:roller_macro
+		parent="left"
+		name="sw"
+		xyz="-0.00958129689 -0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 -2.356194490192345"
+	/>
+	<xacro:roller_macro
+		parent="left"
+		name="s"
+		xyz="0 -0.01355 0.0055"
+		rpy="-1.570796326794896 0 -1.570796326794896"
+	/>
+	<xacro:roller_macro
+		parent="left"
+		name="se"
+		xyz="0.00958129689 -0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 -0.7853981633974483"
+	/>
+
+<!-- ********************************************************************************************************************** -->
+	<xacro:roller_macro
+		parent="right"
+		name="e"
+		xyz="0.01355 0 0.0055"
+		rpy="-1.570796326794896 0 0"
+	/>
+	<xacro:roller_macro
+		parent="right"
+		name="ne"
+		xyz="0.00958129689 0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 0.7853981633974483"
+	/>
+	<xacro:roller_macro
+		parent="right"
+		name="n"
+		xyz="0 0.01355 0.0055"
+		rpy="-1.570796326794896 0 1.570796326794896"
+	/>
+	<xacro:roller_macro
+		parent="right"
+		name="nw"
+		xyz="-0.00958129689 0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 2.356194490192345"
+	/>
+	<xacro:roller_macro
+		parent="right"
+		name="w"
+		xyz="-0.01355 0 0.0055"
+		rpy="-1.570796326794896 0 3.141592653589793"
+	/>
+	<xacro:roller_macro
+		parent="right"
+		name="sw"
+		xyz="-0.00958129689 -0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 -2.356194490192345"
+	/>
+	<xacro:roller_macro
+		parent="right"
+		name="s"
+		xyz="0 -0.01355 0.0055"
+		rpy="-1.570796326794896 0 -1.570796326794896"
+	/>
+	<xacro:roller_macro
+		parent="right"
+		name="se"
+		xyz="0.00958129689 -0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 -0.7853981633974483"
+	/>
+<!-- ******************************************************************************************************************************* -->
+	<xacro:roller_macro
+		parent="back"
+		name="e"
+		xyz="0.01355 0 0.0055"
+		rpy="-1.570796326794896 0 0"
+	/>
+	<xacro:roller_macro
+		parent="back"
+		name="ne"
+		xyz="0.00958129689 0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 0.7853981633974483"
+	/>
+	<xacro:roller_macro
+		parent="back"
+		name="n"
+		xyz="0 0.01355 0.0055"
+		rpy="-1.570796326794896 0 1.570796326794896"
+	/>
+	<xacro:roller_macro
+		parent="back"
+		name="nw"
+		xyz="-0.00958129689 0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 2.356194490192345"
+	/>
+	<xacro:roller_macro
+		parent="back"
+		name="w"
+		xyz="-0.01355 0 0.0055"
+		rpy="-1.570796326794896 0 3.141592653589793"
+	/>
+	<xacro:roller_macro
+		parent="back"
+		name="sw"
+		xyz="-0.00958129689 -0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 -2.356194490192345"
+	/>
+	<xacro:roller_macro
+		parent="back"
+		name="s"
+		xyz="0 -0.01355 0.0055"
+		rpy="-1.570796326794896 0 -1.570796326794896"
+	/>
+	<xacro:roller_macro
+		parent="back"
+		name="se"
+		xyz="0.00958129689 -0.00958129689 -0.0055"
+		rpy="-1.570796326794896 0 -0.7853981633974483"
+	/>
+<!-- //////////////////////////////////////////// -->
+	<link name = "laser_scanner">
+		<visual>
+		<origin xyz="0 0 0.0385" rpy="0 0 0" />
+		<geometry>
+			<cylinder length="0.015" radius="0.025" />
+		</geometry>
+		<material name="yellow">
+			<color rgba="0 0 1 1"/>
+		</material>
+		</visual>
+	</link>
+
+	<joint name="laser_scanner_joint" type="fixed">
+		<parent link = "base_link"/>
+		<child link = "laser_scanner"/>
+		<origin xyz="0 0 0.0385" rpy="0 0 0"/>
+	</joint>
+
+	<gazebo reference="laser_scanner">
+        <sensor name="laser" type="gpu_lidar">
+            <pose>0 0 0 0 0 0</pose>
+            <topic>/scan</topic>
+            <gz_frame_id>laser_scanner</gz_frame_id>
+            <update_rate>40</update_rate>
+            <visualize>true</visualize>
+            <always_on>true</always_on>
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>720</samples> 
+                        <resolution>1</resolution>
+                        <min_angle>-1.578</min_angle>
+                        <max_angle>1.578</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.05</min>
+                    <max>10.0</max>
+                    <resolution>0.01</resolution>
+                </range>
+            </ray>
+        </sensor>
+    </gazebo>
+
+
+
+
+<!-- //////////////////////////////////////////// -->
+	<!-- Gazebo Classic motion plugins removed for ROS 2 Jazzy + gz_ros2_control -->
+
+	<!-- ******************************************************************************* -->
+
+	<gazebo reference="base_link">
+		<material>Gazebo/Black</material>
+	</gazebo>
+	<gazebo reference="laser">
+		<material>Gazebo/Blue</material>
+	</gazebo>
+	<gazebo reference="rim_back_link">
+		<material>Gazebo/Red</material>
+	</gazebo>
+	
+	<gazebo reference="rim_right_link">
+		<material>Gazebo/Green</material>
+	</gazebo>
+
+	<gazebo reference="rim_left_link">
+		<material>Gazebo/Blue</material>
+	</gazebo>
+	
+	<gazebo reference="rim_left_link">
+		<material>Gazebo/Blue</material>
+	</gazebo>
+<!-- ************************************************************ -->
+	<gazebo reference="roller_e_rim_back_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_ne_rim_back_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_n_rim_back_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_nw_rim_back_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_w_rim_back_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+	<gazebo reference="roller_sw_rim_back_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_s_rim_back_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_se_rim_back_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+<!-- ************************************************************ -->
+	<gazebo reference="roller_e_rim_left_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_ne_rim_left_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_n_rim_left_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_nw_rim_left_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_w_rim_left_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+	<gazebo reference="roller_sw_rim_left_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_s_rim_left_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_se_rim_left_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+<!-- ************************************************************ -->
+	<gazebo reference="roller_e_rim_right_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_ne_rim_right_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_n_rim_right_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_nw_rim_right_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_w_rim_right_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+	<gazebo reference="roller_sw_rim_right_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_s_rim_right_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+	<gazebo reference="roller_se_rim_right_link">
+		<material>Gazebo/Black</material>
+	</gazebo> 
+
+
+
+	<!-- ===================================================================== -->
+	<!-- ROS 2 control (Gazebo Sim)                                           -->
+	<!-- ===================================================================== -->
+	<ros2_control name="GazeboSimSystem" type="system">
+		<hardware>
+			<plugin>gz_ros2_control/GazeboSimSystem</plugin>
+		</hardware>
+
+		<!-- 3-wheel omni controller will command these joints -->
+		<joint name="rim_left_joint">
+			<command_interface name="velocity">
+				<param name="min">-20</param>
+				<param name="max">20</param>
+			</command_interface>
+			<state_interface name="position"/>
+			<state_interface name="velocity"/>
+		</joint>
+
+		<joint name="rim_right_joint">
+			<command_interface name="velocity">
+				<param name="min">-20</param>
+				<param name="max">20</param>
+			</command_interface>
+			<state_interface name="position"/>
+			<state_interface name="velocity"/>
+		</joint>
+
+		<joint name="rim_back_joint">
+			<command_interface name="velocity">
+				<param name="min">-20</param>
+				<param name="max">20</param>
+			</command_interface>
+			<state_interface name="position"/>
+			<state_interface name="velocity"/>
+		</joint>
+	</ros2_control>
+
+	<!-- gz_ros2_control plugin to connect Gazebo joints <-> ros2_control -->
+	<gazebo>
+		<plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+			<ros>
+				<!-- namespace can be overridden by launch if needed -->
+			</ros>
+			<!-- Use a parameter file that the user will create under diff/config -->
+			<parameters>$(find diff)/config/omni_wheel_drive_controller.yaml</parameters>
+		</plugin>
+	</gazebo>
+
+	<!-- ===================================================================== -->
+    <!-- MACRO TẠO CẢM BIẾN SIÊU ÂM (SONAR)                                    -->
+    <!-- ===================================================================== -->
+    <xacro:macro name="sonar_sensor" params="name xyz rpy topic">
+        <link name="${name}_link">
+            <visual>
+                <geometry>
+                    <box size="0.01 0.02 0.01"/>
+                </geometry>
+                <material name="green">
+                    <color rgba="0 1 0 1"/>
+                </material>
+            </visual>
+            <inertial>
+                <mass value="0.001"/>
+                <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+            </inertial>
+        </link>
+
+        <joint name="${name}_joint" type="fixed">
+            <parent link="base_link"/>
+            <child link="${name}_link"/>
+            <origin xyz="${xyz}" rpy="${rpy}"/>
+        </joint>
+
+        <gazebo reference="${name}_link">
+            <!-- Mô phỏng Sonar bằng Lidar góc siêu hẹp -->
+            <sensor name="${name}" type="gpu_lidar">
+                <pose>0 0 0 0 0 0</pose>
+                <topic>${topic}</topic>
+                <update_rate>20</update_rate>
+                <visualize>true</visualize> <!-- Hiện tia màu xanh trong Gazebo -->
+                <always_on>true</always_on>
+                <ray>
+                    <scan>
+                        <horizontal>
+                            <samples>5</samples> <!-- 5 tia chụm lại tạo thành nón siêu âm -->
+                            <resolution>1</resolution>
+                            <min_angle>-0.1</min_angle>
+                            <max_angle>0.1</max_angle>
+                        </horizontal>
+                    </scan>
+                    <range>
+                        <min>0.01</min> <!-- Bắt đầu quét từ 1cm -->
+                        <max>2.0</max>  <!-- Chỉ quan tâm trong vòng 2 mét -->
+                        <resolution>0.01</resolution>
+                    </range>
+                </ray>
+            </sensor>
+            <material>Gazebo/Green</material>
+        </gazebo>
+    </xacro:macro>
+
+    <!-- KÍCH HOẠT 3 CẢM BIẾN VÀO 3 GÓC CỦA ROBOT -->
+    <!-- Mặt trước (Giữa bánh Trái và Phải) -->
+    <xacro:sonar_sensor name="sonar_front" xyz="0 -0.09 0.03" rpy="0 0 -1.5708" topic="/sonar/front"/>
+    <!-- Góc hông Trái (Giữa bánh Trái và Sau) -->
+    <xacro:sonar_sensor name="sonar_left"  xyz="0.08 0.04 0.03" rpy="0 0 0.5236" topic="/sonar/left"/>
+    <!-- Góc hông Phải (Giữa bánh Phải và Sau) -->
+    <xacro:sonar_sensor name="sonar_right" xyz="-0.08 0.04 0.03" rpy="0 0 2.6180" topic="/sonar/right"/>
+	
+	<!-- <gazebo>
+        <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+            <render_engine>ogre2</render_engine>
+        </plugin>
+    </gazebo> -->
+</robot>

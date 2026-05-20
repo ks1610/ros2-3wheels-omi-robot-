@@ -1,0 +1,32 @@
+[0.007s] Invoking command in '/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff -- -j16 -l16
+[0.039s] Invoked command in '/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff -- -j16 -l16
+[0.046s] Invoking command in '/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff
+[0.052s] -- Install configuration: ""
+[0.052s] -- Execute custom install script
+[0.052s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/launch/sim.launch.py
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/urdf/main.urdf.xacro
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/urdf/roller.urdf.xacro
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/mesh/base_cift.stl
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/mesh/rim.stl
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/mesh/roller.stl
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/config/omni_wheel_drive_controller.yaml
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/worlds/map1.sdf
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/lib/diff/lidar_veri_anl.py
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/lib/diff/lidar_veri.py
+[0.053s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/lib/diff/otonom1.py
+[0.054s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/ament_index/resource_index/package_run_dependencies/diff
+[0.054s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/ament_index/resource_index/parent_prefix_path/diff
+[0.054s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/environment/ament_prefix_path.sh
+[0.054s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/environment/ament_prefix_path.dsv
+[0.054s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/environment/path.sh
+[0.054s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/environment/path.dsv
+[0.054s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/local_setup.bash
+[0.054s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/local_setup.sh
+[0.054s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/local_setup.zsh
+[0.055s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/local_setup.dsv
+[0.055s] -- Symlinking: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/package.dsv
+[0.060s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/ament_index/resource_index/packages/diff
+[0.060s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/cmake/diffConfig.cmake
+[0.061s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/cmake/diffConfig-version.cmake
+[0.061s] -- Up-to-date symlink: /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/package.xml
+[0.062s] Invoked command in '/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff
