@@ -5,7 +5,7 @@ set(diff_BUILD_DEPENDS "rclcpp" "rclpy" "std_msgs" "geometry_msgs" "sensor_msgs"
 set(diff_BUILDTOOL_DEPENDS "ament_cmake")
 set(diff_BUILD_EXPORT_DEPENDS "rclcpp" "rclpy" "std_msgs" "geometry_msgs" "sensor_msgs" "nav_msgs" "tf2_ros")
 set(diff_BUILDTOOL_EXPORT_DEPENDS )
-set(diff_EXEC_DEPENDS "rclcpp" "rclpy" "std_msgs" "geometry_msgs" "sensor_msgs" "nav_msgs" "tf2_ros")
+set(diff_EXEC_DEPENDS "python3" "rclcpp" "rclpy" "std_msgs" "geometry_msgs" "sensor_msgs" "nav_msgs" "tf2_ros")
 set(diff_TEST_DEPENDS )
 set(diff_GROUP_DEPENDS )
 set(diff_MEMBER_OF_GROUPS )

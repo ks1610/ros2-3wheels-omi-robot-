@@ -362,3 +362,6 @@ ament_cmake_symlink_install_files("/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff" F
 
 # install(FILES "/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/package.xml" "DESTINATION" "share/diff")
 ament_cmake_symlink_install_files("/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff" FILES "/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/package.xml" "DESTINATION" "share/diff")
+
+# install(PROGRAMS "scripts/converter.py" "DESTINATION" "lib/diff")
+ament_cmake_symlink_install_programs("/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff" PROGRAMS "scripts/converter.py" "DESTINATION" "lib/diff")

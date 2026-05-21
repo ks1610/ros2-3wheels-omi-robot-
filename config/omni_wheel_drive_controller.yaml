@@ -6,8 +6,6 @@ controller_manager:
     update_rate: 50 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
-
-    # Khai báo Node điều khiển bánh Omni của bạn
     omni_wheel_drive_controller:
       type: omni_wheel_drive_controller/OmniWheelDriveController
 # ==========================================================
@@ -47,20 +45,17 @@ joint_state_broadcaster:
 # ==========================================================
 omni_wheel_drive_controller:
   ros__parameters:
-    # NOTE: Tune these to match your wheel geometry (order matters).
+    cmd_vel: "/cmd_vel"
+    wheel_names: ["rim_left_joint", "rim_right_joint", "rim_back_joint"]
+    robot_radius: 0.067
+    wheel_radius: 0.035
     wheel_offset: 0.0
 
-    # Your URDF joint names:
-    wheel_names:
-      - "rim_left_joint"
-      - "rim_right_joint"
-      - "rim_back_joint"
-
-    # Distance from robot center to each wheel center (meters). TUNE if odom behavior is wrong.
-    robot_radius: 0.08
-
-    # Wheel radius (meters). TUNE based on your real rim/roller radius.
-    wheel_radius: 0.035
+    command_interfaces:
+      - velocity
+    state_interfaces:
+      - position
+      - velocity
     
     use_stamped_vel: false
     

@@ -45,3 +45,8 @@ install(PROGRAMS
 
 # Đánh dấu đây là một ament package
 ament_package()
+
+install(PROGRAMS
+  scripts/converter.py
+  DESTINATION lib/${PROJECT_NAME}
+)

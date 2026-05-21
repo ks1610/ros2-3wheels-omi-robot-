@@ -1,10 +1,8 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-
 	<xacro:macro
 		name="roller_macro"
-		params="parent name xyz rpy"
-	>
+		params="parent name xyz rpy">
 
 		<link name="roller_${name}_rim_${parent}_link">
 			<inertial>
@@ -63,5 +61,4 @@
             <material>Gazebo/DarkGrey</material>
         </gazebo>
 	</xacro:macro>
-
 </robot>

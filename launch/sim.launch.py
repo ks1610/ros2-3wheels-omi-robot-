@@ -49,6 +49,7 @@ def generate_launch_description():
         executable='create',
         arguments=['-topic', 'robot_description',
                    '-name', 'diff_bot',
+                   '-allow_renaming', 'true',
                    '-z', '0.1'], 
         output='screen'
     )
@@ -84,9 +85,12 @@ def generate_launch_description():
     load_omni_controller = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["omni_wheel_drive_controller"],
+        arguments=[
+            "omni_wheel_drive_controller",
+            "--param-file", os.path.join(pkg_share, 'config', 'omni_wheel_drive_controller.yaml'),
+            "--ros-args", "-r", "/cmd_vel:=/cmd_vel" # Ép controller lắng nghe /cmd_vel
+        ],
     )
-
     return LaunchDescription([
         set_gazebo_resource_path,
         node_robot_state_publisher,
@@ -94,6 +98,17 @@ def generate_launch_description():
         spawn_entity,
         bridge,
         rviz2,
-        load_joint_state_broadcaster,
-        load_omni_controller
+        # Đảm bảo spawner chỉ chạy SAU KHI robot đã được spawn vào Gazebo
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=spawn_entity,
+                on_exit=[load_joint_state_broadcaster],
+            )
+        ),
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=load_joint_state_broadcaster,
+                on_exit=[load_omni_controller],
+            )
+        ),
     ])
