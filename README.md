@@ -40,8 +40,3 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 source install/setup.bash
 ros2 run diff otonom1.py --ros-args -p use_sim_time:=true
 ```
-
-#### Bridge cho 3 cảm biến siêu âm:
-```
-ros2 run ros_gz_bridge parameter_bridge /sonar/front@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan /sonar/left@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan /sonar/right@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan
-```
