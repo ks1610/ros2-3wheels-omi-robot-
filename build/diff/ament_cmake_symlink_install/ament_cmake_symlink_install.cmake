@@ -315,11 +315,11 @@ message(STATUS "Execute custom install script")
 
 # begin of custom install code
 
-# install(DIRECTORY "launch" "urdf" "mesh" "config" "worlds" "DESTINATION" "share/diff")
-ament_cmake_symlink_install_directory("/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff" DIRECTORY "launch" "urdf" "mesh" "config" "worlds" "DESTINATION" "share/diff")
+# install(DIRECTORY "launch" "urdf" "mesh" "config" "worlds" "maps" "rviz" "DESTINATION" "share/diff")
+ament_cmake_symlink_install_directory("/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff" DIRECTORY "launch" "urdf" "mesh" "config" "worlds" "maps" "rviz" "DESTINATION" "share/diff")
 
-# install(PROGRAMS "scripts/lidar_veri_anl.py" "scripts/lidar_veri.py" "scripts/otonom1.py" "DESTINATION" "lib/diff")
-ament_cmake_symlink_install_programs("/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff" PROGRAMS "scripts/lidar_veri_anl.py" "scripts/lidar_veri.py" "scripts/otonom1.py" "DESTINATION" "lib/diff")
+# install(PROGRAMS "scripts/lidar_veri_anl.py" "scripts/lidar_veri.py" "scripts/otonom1.py" "scripts/auto.py" "DESTINATION" "lib/diff")
+ament_cmake_symlink_install_programs("/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff" PROGRAMS "scripts/lidar_veri_anl.py" "scripts/lidar_veri.py" "scripts/otonom1.py" "scripts/auto.py" "DESTINATION" "lib/diff")
 
 # install(FILES "/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/diff" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff" FILES "/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/build/diff/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/diff" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

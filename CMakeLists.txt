@@ -24,6 +24,8 @@ install(DIRECTORY
   mesh
   config
   worlds
+  maps
+  rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
@@ -33,6 +35,7 @@ install(PROGRAMS
   scripts/lidar_veri_anl.py
   scripts/lidar_veri.py
   scripts/otonom1.py
+  scripts/auto.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

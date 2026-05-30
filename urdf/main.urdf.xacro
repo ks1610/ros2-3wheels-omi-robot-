@@ -341,7 +341,7 @@
 <!-- //////////////////////////////////////////// -->
 	<link name = "laser_scanner">
 		<visual>
-		<origin xyz="0 0 0.0385" rpy="0 0 0" />
+		<origin xyz="0 0 0" rpy="0 0 0" />
 		<geometry>
 			<cylinder length="0.015" radius="0.025" />
 		</geometry>
@@ -354,7 +354,7 @@
 	<joint name="laser_scanner_joint" type="fixed">
 		<parent link = "base_link"/>
 		<child link = "laser_scanner"/>
-		<origin xyz="0 0 0.0385" rpy="0 0 0"/>
+		<origin xyz="0 0 0.077" rpy="0 0 0"/>
 	</joint>
 
 	<gazebo reference="laser_scanner">

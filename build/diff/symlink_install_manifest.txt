@@ -1,5 +1,8 @@
-/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/launch/auto_mapping.launch.py
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/launch/gazebo_sim.launch.py
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/launch/nav2.launch.py
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/launch/navigation_gazebo_sim.launch.py
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/launch/sim.launch.py
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/launch/slam_gazebo_sim.launch.py
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/urdf/main.urdf.xacro
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/urdf/roller.urdf.xacro
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/mesh/base_cift.stl
@@ -11,9 +14,17 @@
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/config/omni_wheel_drive_controller.yaml
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/worlds/map.png
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/worlds/map1.sdf
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/worlds/maze2.sdf
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/maps/map1.pgm
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/maps/map1.yaml
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/maps/maze2.pgm
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/maps/maze2.yaml
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/rviz/navigation.rviz
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/rviz/slam.rviz
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/lib/diff/lidar_veri_anl.py
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/lib/diff/lidar_veri.py
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/lib/diff/otonom1.py
+/home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/lib/diff/auto.py
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/ament_index/resource_index/package_run_dependencies/diff
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/ament_index/resource_index/parent_prefix_path/diff
 /home/khanhtrinh/trinh/3WD_OMNI_ROBOT/diff/install/diff/share/diff/environment/ament_prefix_path.sh
